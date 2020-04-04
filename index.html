@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19: Global Lockdown</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin-left: 1em;
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+    <script src="https://unpkg.com/timelines-chart@2"></script>
+  </head>
+  <body>
+    <h1>Covid-19: Global Lockdown</h1>
+    <div id="lockdown-plot"></div>
+    <p>
+      Source:
+      <a
+        href="https://en.wikipedia.org/wiki/Template:2020_coronavirus_quarantines_outside_Hubei"
+        target="_blank"
+        >Wikipedia</a
+      >
+    </p>
+
+    <script>
+      let end = new Date();
+      let start = end - 3 * 24 * 60 * 60 * 1000;
+      TimelinesChart()
+        .maxLineHeight(14)
+        .maxHeight(2000)
+        .useUtc(true)
+        .timeFormat('%Y-%m-%d')
+        .data([
+          {
+            group: 'Algeria',
+            data: [
+              {
+                label: 'Algiers',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Blida',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Argentina',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584576000000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Australia',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1587686400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Austria',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584316800000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Belgium',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584489600000, 1587168000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Bolivia',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584835200000, 1586822400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Botswana',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585785600000, 1588204800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Brazil',
+            data: [
+              {
+                label: 'Santa Catarina',
+                data: [
+                  {
+                    timeRange: [1584403200000, 1586304000000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'São Paulo',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586217600000],
+                    val: 'State',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Chile',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584576000000, 1586822400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Colombia',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585094400000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Republic of the Congo',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585612800000, 1587340800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Costa Rica',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Croatia',
+            data: [
+              {
+                label: 'Murter',
+                data: [
+                  {
+                    timeRange: [1585094400000, 1586736000000],
+                    val: 'Municipality',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Cuba',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1587254400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Czech Republic',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584316800000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Denmark',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1583884800000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Dominican Republic',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584576000000, 1585872000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Ecuador',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584316800000, 1585612800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'El Salvador',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1583971200000, 1585699200000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Eritrea',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585785600000, 1587600000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Fiji',
+            data: [
+              {
+                label: 'Lautoka',
+                data: [
+                  {
+                    timeRange: [1584662400000, 1586476800000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Suva',
+                data: [
+                  {
+                    timeRange: [1585872000000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Finland',
+            data: [
+              {
+                label: 'Uusimaa',
+                data: [
+                  {
+                    timeRange: [1585267200000, 1586822400000],
+                    val: 'Region',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'France',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584403200000, 1586908800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Germany',
+            data: [
+              {
+                label: 'Bavaria',
+                data: [
+                  {
+                    timeRange: [1584662400000, 1585872000000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'Freiburg, BW',
+                data: [
+                  {
+                    timeRange: [1584748800000, 1585872000000],
+                    val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Ghana',
+            data: [
+              {
+                label: 'Accra',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1586822400000],
+                    val: 'Metropolitan Area',
+                  },
+                ],
+              },
+              {
+                label: 'Kumasi',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1586822400000],
+                    val: 'Metropolitan Area',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Greece',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586131200000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Honduras',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584403200000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Hungary',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585353600000, 1586563200000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'India',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585094400000, 1586908800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Indonesia',
+            data: [
+              {
+                label: 'Tegal',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1595635200000],
+                    val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Iraq',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584835200000, 1586563200000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Ireland',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1583971200000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Israel',
+            data: [
+              {
+                label: 'Bnei Brak',
+                data: [
+                  {
+                    timeRange: [1585785600000, 1586908800000],
+                    val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Italy',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1583712000000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Jordan',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584748800000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Kuwait',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584144000000, 1585440000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Lebanon',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584230400000, 1585440000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Liberia',
+            data: [
+              {
+                label: 'Margibi',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586822400000],
+                    val: 'County',
+                  },
+                ],
+              },
+              {
+                label: 'Montserrado',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586822400000],
+                    val: 'County',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Libya',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584835200000, 1587340800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Lithuania',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584316800000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Madagascar',
+            data: [
+              {
+                label: 'Antananarivo',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586649600000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Toamasina',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586649600000],
+                    val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Malaysia',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584489600000, 1586822400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Montenegro',
+            data: [
+              {
+                label: 'Tuzi',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586822400000],
+                    val: 'Municipality',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Morocco',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584576000000, 1587340800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Nepal',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586217600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Netherlands',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584316800000, 1588032000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'New Zealand',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1587254400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Nigeria',
+            data: [
+              {
+                label: 'Abuja',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Lagos',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Ogun',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1586822400000],
+                    val: 'State',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Northern Cyprus',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1585872000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Norway',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1583971200000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Oman',
+            data: [
+              {
+                label: 'Muttrah',
+                data: [
+                  {
+                    timeRange: [1585699200000, 1587168000000],
+                    val: 'District',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Pakistan',
+            data: [
+              {
+                label: 'Azad Kashmir',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586822400000],
+                    val: 'Administrative',
+                  },
+                ],
+              },
+              {
+                label: 'Balochistan',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586822400000],
+                    val: 'Province',
+                  },
+                ],
+              },
+              {
+                label: 'Gilgit-Baltistan',
+                data: [
+                  {
+                    timeRange: [1584835200000, 1586822400000],
+                    val: 'Administrative',
+                  },
+                ],
+              },
+              {
+                label: 'Punjab',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586822400000],
+                    val: 'Province',
+                  },
+                ],
+              },
+              {
+                label: 'Sindh',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586822400000],
+                    val: 'Province',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Panama',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585094400000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Papua New Guinea',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Paraguay',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584662400000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Peru',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584316800000, 1586563200000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Philippines',
+            data: [
+              {
+                label: 'Cebu',
+                data: [
+                  {
+                    timeRange: [1585267200000, 1586822400000],
+                    val: 'Province',
+                  },
+                ],
+              },
+              {
+                label: 'Davao Region',
+                data: [
+                  {
+                    timeRange: [1584576000000, 1586822400000],
+                    val: 'Region',
+                  },
+                ],
+              },
+              {
+                label: 'Luzon',
+                data: [
+                  {
+                    timeRange: [1584230400000, 1586822400000],
+                    val: 'Island group',
+                  },
+                ],
+              },
+              {
+                label: 'Soccsksargen',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1586822400000],
+                    val: 'Region',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Poland',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584057600000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Portugal',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584576000000, 1585785600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Qatar',
+            data: [
+              {
+                label: 'Doha Industrial Area',
+                data: [
+                  {
+                    timeRange: [1583884800000, 1586736000000],
+                    val: 'Industrial park',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Romania',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585094400000, 1586822400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Russia',
+            data: [
+              {
+                label: 'Moscow',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1586649600000],
+                    val: 'Metropolitan area',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Rwanda',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584748800000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Samoa',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1586390400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Saudi Arabia',
+            data: [
+              {
+                label: 'Jeddah',
+                data: [
+                  {
+                    timeRange: [1585440000000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Mecca',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Medina',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Qatif',
+                data: [
+                  {
+                    timeRange: [1583712000000, 1586822400000],
+                    val: 'Area',
+                  },
+                ],
+              },
+              {
+                label: 'Riyadh',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1586822400000],
+                    val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Singapore',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588550400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'South Africa',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1586995200000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Spain',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584144000000, 1587772800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Thailand',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585094400000, 1588204800000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Tunisia',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584835200000, 1586563200000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'United Arab Emirates',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585180800000, 1585526400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'United Kingdom',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586736000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'United States',
+            data: [
+              {
+                label: 'California',
+                data: [
+                  {
+                    timeRange: [1584576000000, 1585440000000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'Clark County, NV',
+                data: [
+                  {
+                    timeRange: [1584662400000, 1587340800000],
+                    val: 'County',
+                  },
+                ],
+              },
+              {
+                label: 'Connecticut',
+                data: [
+                  {
+                    timeRange: [1584921600000, 1585440000000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'Illinois',
+                data: [
+                  {
+                    timeRange: [1584748800000, 1586217600000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'Kansas City, KS',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1587600000000],
+                    val: 'City',
+                  },
+                ],
+              },
+              {
+                label: 'Massachusetts',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586217600000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'Michigan',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586822400000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'New York',
+                data: [
+                  {
+                    timeRange: [1584662400000, 1585440000000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'Oregon',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1586822400000],
+                    val: 'State',
+                  },
+                ],
+              },
+              {
+                label: 'Wisconsin',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1587686400000],
+                    val: 'State',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Venezuela',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584403200000, 1587254400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Zimbabwe',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1585526400000, 1586649600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+        ])
+        .zQualitative(true)
+        .dateMarker(new Date())(document.getElementById('lockdown-plot'));
+    </script>
+  </body>
+</html>
