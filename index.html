@@ -24,6 +24,7 @@
   </head>
   <body>
     <h1>Covid-19: Global Lockdown</h1>
+    <p>* Lockdowns without end date shown as 60 days lockdowns</p>
     <div id="lockdown-plot"></div>
     <p>
       Source:
@@ -32,18 +33,31 @@
         target="_blank"
         >Wikipedia</a
       >
-      | Last update: Sun Apr 5 18:21:13 +08 2020
+      | Last update: Fri Apr 10 22:38:11 +08 2020
     </p>
 
     <script>
-      let end = new Date();
-      let start = end - 3 * 24 * 60 * 60 * 1000;
       TimelinesChart()
         .maxLineHeight(14)
         .maxHeight(2000)
         .useUtc(true)
         .timeFormat('%Y-%m-%d')
+        .enableAnimations(false)
         .data([
+          {
+            group: 'Albania',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584057600000, 1589241600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
           {
             group: 'Algeria',
             data: [
@@ -51,7 +65,7 @@
                 label: 'Algiers',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586822400000],
+                    timeRange: [1584921600000, 1587254400000],
                     val: 'City',
                   },
                 ],
@@ -60,7 +74,7 @@
                 label: 'Blida',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586822400000],
+                    timeRange: [1584921600000, 1587254400000],
                     val: 'City',
                   },
                 ],
@@ -88,7 +102,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584921600000, 1587686400000],
+                    timeRange: [1584921600000, 1590105600000],
                     val: 'National',
                   },
                 ],
@@ -130,7 +144,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584489600000, 1587168000000],
+                    timeRange: [1584489600000, 1587254400000],
                     val: 'National',
                   },
                 ],
@@ -144,7 +158,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584835200000, 1586822400000],
+                    timeRange: [1584835200000, 1586908800000],
                     val: 'National',
                   },
                 ],
@@ -172,7 +186,7 @@
                 label: 'Santa Catarina',
                 data: [
                   {
-                    timeRange: [1584403200000, 1586304000000],
+                    timeRange: [1584403200000, 1586217600000],
                     val: 'State',
                   },
                 ],
@@ -181,7 +195,7 @@
                 label: 'São Paulo',
                 data: [
                   {
-                    timeRange: [1585008000000, 1586217600000],
+                    timeRange: [1585008000000, 1586304000000],
                     val: 'State',
                   },
                 ],
@@ -195,7 +209,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584576000000, 1586822400000],
+                    timeRange: [1584576000000, 1589760000000],
                     val: 'National',
                   },
                 ],
@@ -237,7 +251,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586736000000],
+                    timeRange: [1584921600000, 1590105600000],
                     val: 'National',
                   },
                 ],
@@ -251,8 +265,17 @@
                 label: 'Murter',
                 data: [
                   {
-                    timeRange: [1585094400000, 1586736000000],
+                    timeRange: [1585094400000, 1590278400000],
                     val: 'Municipality',
+                  },
+                ],
+              },
+              {
+                label: 'Rest of area',
+                data: [
+                  {
+                    timeRange: [1584489600000, 1589673600000],
+                    val: 'National',
                   },
                 ],
               },
@@ -265,7 +288,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584921600000, 1587254400000],
+                    timeRange: [1584921600000, 1587340800000],
                     val: 'National',
                   },
                 ],
@@ -307,7 +330,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584576000000, 1585872000000],
+                    timeRange: [1584576000000, 1589760000000],
                     val: 'National',
                   },
                 ],
@@ -335,7 +358,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1583971200000, 1585699200000],
+                    timeRange: [1583971200000, 1585785600000],
                     val: 'National',
                   },
                 ],
@@ -363,7 +386,7 @@
                 label: 'Lautoka',
                 data: [
                   {
-                    timeRange: [1584662400000, 1586476800000],
+                    timeRange: [1584662400000, 1586217600000],
                     val: 'City',
                   },
                 ],
@@ -372,7 +395,7 @@
                 label: 'Suva',
                 data: [
                   {
-                    timeRange: [1585872000000, 1586822400000],
+                    timeRange: [1585872000000, 1587081600000],
                     val: 'City',
                   },
                 ],
@@ -386,7 +409,7 @@
                 label: 'Uusimaa',
                 data: [
                   {
-                    timeRange: [1585267200000, 1586822400000],
+                    timeRange: [1585267200000, 1586995200000],
                     val: 'Region',
                   },
                 ],
@@ -414,7 +437,7 @@
                 label: 'Bavaria',
                 data: [
                   {
-                    timeRange: [1584662400000, 1585872000000],
+                    timeRange: [1584662400000, 1587254400000],
                     val: 'State',
                   },
                 ],
@@ -437,7 +460,7 @@
                 label: 'Accra',
                 data: [
                   {
-                    timeRange: [1585526400000, 1586822400000],
+                    timeRange: [1585526400000, 1586649600000],
                     val: 'Metropolitan Area',
                   },
                 ],
@@ -446,7 +469,7 @@
                 label: 'Kumasi',
                 data: [
                   {
-                    timeRange: [1585526400000, 1586822400000],
+                    timeRange: [1585526400000, 1586649600000],
                     val: 'Metropolitan Area',
                   },
                 ],
@@ -460,7 +483,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586131200000],
+                    timeRange: [1584921600000, 1587945600000],
                     val: 'National',
                   },
                 ],
@@ -488,7 +511,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585353600000, 1586563200000],
+                    timeRange: [1585353600000, 1586476800000],
                     val: 'National',
                   },
                 ],
@@ -502,7 +525,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585094400000, 1586908800000],
+                    timeRange: [1585094400000, 1586822400000],
                     val: 'National',
                   },
                 ],
@@ -513,10 +536,19 @@
             group: 'Indonesia',
             data: [
               {
+                label: 'Jakarta[a]',
+                data: [
+                  {
+                    timeRange: [1586476800000, 1587600000000],
+                    val: 'Province',
+                  },
+                ],
+              },
+              {
                 label: 'Tegal',
                 data: [
                   {
-                    timeRange: [1585180800000, 1595635200000],
+                    timeRange: [1585180800000, 1596153600000],
                     val: 'City',
                   },
                 ],
@@ -544,7 +576,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1583971200000, 1586649600000],
+                    timeRange: [1583971200000, 1585440000000],
                     val: 'National',
                   },
                 ],
@@ -558,7 +590,7 @@
                 label: 'Bnei Brak',
                 data: [
                   {
-                    timeRange: [1585785600000, 1586908800000],
+                    timeRange: [1585785600000, 1590969600000],
                     val: 'City',
                   },
                 ],
@@ -580,13 +612,81 @@
             ],
           },
           {
+            group: 'Japan',
+            data: [
+              {
+                label: 'Chiba',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588723200000],
+                    val: 'Prefecture',
+                  },
+                ],
+              },
+              {
+                label: 'Fukuoka',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588723200000],
+                    val: 'Prefecture',
+                  },
+                ],
+              },
+              {
+                label: 'Hyōgo',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588723200000],
+                    val: 'Prefecture',
+                  },
+                ],
+              },
+              {
+                label: 'Kanagawa',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588723200000],
+                    val: 'Prefecture',
+                  },
+                ],
+              },
+              {
+                label: 'Osaka',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588723200000],
+                    val: 'Prefecture',
+                  },
+                ],
+              },
+              {
+                label: 'Saitama',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588723200000],
+                    val: 'Prefecture',
+                  },
+                ],
+              },
+              {
+                label: 'Tokyo[b]',
+                data: [
+                  {
+                    timeRange: [1586217600000, 1588723200000],
+                    val: 'Prefecture',
+                  },
+                ],
+              },
+            ],
+          },
+          {
             group: 'Jordan',
             data: [
               {
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584748800000, 1586649600000],
+                    timeRange: [1584748800000, 1589932800000],
                     val: 'National',
                   },
                 ],
@@ -614,7 +714,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584230400000, 1585440000000],
+                    timeRange: [1584230400000, 1585353600000],
                     val: 'National',
                   },
                 ],
@@ -628,7 +728,7 @@
                 label: 'Margibi',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586822400000],
+                    timeRange: [1584921600000, 1586563200000],
                     val: 'County',
                   },
                 ],
@@ -637,7 +737,7 @@
                 label: 'Montserrado',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586822400000],
+                    timeRange: [1584921600000, 1586563200000],
                     val: 'County',
                   },
                 ],
@@ -651,7 +751,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584835200000, 1587340800000],
+                    timeRange: [1584835200000, 1590019200000],
                     val: 'National',
                   },
                 ],
@@ -673,13 +773,27 @@
             ],
           },
           {
+            group: 'Luxembourg',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584489600000, 1589673600000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
             group: 'Madagascar',
             data: [
               {
                 label: 'Antananarivo',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586649600000],
+                    timeRange: [1584921600000, 1590105600000],
                     val: 'City',
                   },
                 ],
@@ -688,7 +802,7 @@
                 label: 'Toamasina',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586649600000],
+                    timeRange: [1584921600000, 1590105600000],
                     val: 'City',
                   },
                 ],
@@ -702,7 +816,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584489600000, 1586822400000],
+                    timeRange: [1584489600000, 1588032000000],
                     val: 'National',
                   },
                 ],
@@ -716,7 +830,7 @@
                 label: 'Tuzi',
                 data: [
                   {
-                    timeRange: [1585008000000, 1586822400000],
+                    timeRange: [1585008000000, 1590192000000],
                     val: 'Municipality',
                   },
                 ],
@@ -772,7 +886,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585180800000, 1587254400000],
+                    timeRange: [1585180800000, 1590364800000],
                     val: 'National',
                   },
                 ],
@@ -786,7 +900,7 @@
                 label: 'Abuja',
                 data: [
                   {
-                    timeRange: [1585526400000, 1586822400000],
+                    timeRange: [1585526400000, 1586649600000],
                     val: 'City',
                   },
                 ],
@@ -795,7 +909,7 @@
                 label: 'Lagos',
                 data: [
                   {
-                    timeRange: [1585526400000, 1586822400000],
+                    timeRange: [1585526400000, 1586649600000],
                     val: 'City',
                   },
                 ],
@@ -804,7 +918,7 @@
                 label: 'Ogun',
                 data: [
                   {
-                    timeRange: [1585526400000, 1586822400000],
+                    timeRange: [1585526400000, 1586649600000],
                     val: 'State',
                   },
                 ],
@@ -818,7 +932,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585526400000, 1585872000000],
+                    timeRange: [1585526400000, 1590710400000],
                     val: 'National',
                   },
                 ],
@@ -843,11 +957,11 @@
             group: 'Oman',
             data: [
               {
-                label: 'Muttrah',
+                label: 'Muscat',
                 data: [
                   {
-                    timeRange: [1585699200000, 1587168000000],
-                    val: 'District',
+                    timeRange: [1586476800000, 1587513600000],
+                    val: 'Region',
                   },
                 ],
               },
@@ -861,24 +975,6 @@
                 data: [
                   {
                     timeRange: [1585008000000, 1586822400000],
-                    val: 'Administrative',
-                  },
-                ],
-              },
-              {
-                label: 'Balochistan',
-                data: [
-                  {
-                    timeRange: [1585008000000, 1586822400000],
-                    val: 'Province',
-                  },
-                ],
-              },
-              {
-                label: 'Gilgit-Baltistan',
-                data: [
-                  {
-                    timeRange: [1584835200000, 1586822400000],
                     val: 'Administrative',
                   },
                 ],
@@ -901,6 +997,24 @@
                   },
                 ],
               },
+              {
+                label: 'Balochistan',
+                data: [
+                  {
+                    timeRange: [1585008000000, 1587427200000],
+                    val: 'Province',
+                  },
+                ],
+              },
+              {
+                label: 'Gilgit-Baltistan',
+                data: [
+                  {
+                    timeRange: [1584835200000, 1587427200000],
+                    val: 'Administrative',
+                  },
+                ],
+              },
             ],
           },
           {
@@ -910,7 +1024,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585094400000, 1586736000000],
+                    timeRange: [1585094400000, 1586217600000],
                     val: 'National',
                   },
                 ],
@@ -924,7 +1038,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585008000000, 1586736000000],
+                    timeRange: [1585008000000, 1586217600000],
                     val: 'National',
                   },
                 ],
@@ -952,7 +1066,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584316800000, 1586563200000],
+                    timeRange: [1584316800000, 1586649600000],
                     val: 'National',
                   },
                 ],
@@ -966,7 +1080,7 @@
                 label: 'Cebu',
                 data: [
                   {
-                    timeRange: [1585267200000, 1586822400000],
+                    timeRange: [1585267200000, 1588204800000],
                     val: 'Province',
                   },
                 ],
@@ -975,7 +1089,7 @@
                 label: 'Davao Region',
                 data: [
                   {
-                    timeRange: [1584576000000, 1586822400000],
+                    timeRange: [1584576000000, 1588204800000],
                     val: 'Region',
                   },
                 ],
@@ -984,7 +1098,7 @@
                 label: 'Luzon',
                 data: [
                   {
-                    timeRange: [1584230400000, 1586822400000],
+                    timeRange: [1584230400000, 1588204800000],
                     val: 'Island group',
                   },
                 ],
@@ -993,7 +1107,7 @@
                 label: 'Soccsksargen',
                 data: [
                   {
-                    timeRange: [1584921600000, 1586822400000],
+                    timeRange: [1584921600000, 1588204800000],
                     val: 'Region',
                   },
                 ],
@@ -1007,7 +1121,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584057600000, 1586649600000],
+                    timeRange: [1584057600000, 1586563200000],
                     val: 'National',
                   },
                 ],
@@ -1035,7 +1149,7 @@
                 label: 'Doha Industrial Area',
                 data: [
                   {
-                    timeRange: [1583884800000, 1586736000000],
+                    timeRange: [1583884800000, 1589068800000],
                     val: 'Industrial park',
                   },
                 ],
@@ -1049,7 +1163,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585094400000, 1586822400000],
+                    timeRange: [1585094400000, 1589241600000],
                     val: 'National',
                   },
                 ],
@@ -1063,7 +1177,7 @@
                 label: 'Moscow',
                 data: [
                   {
-                    timeRange: [1585526400000, 1586649600000],
+                    timeRange: [1585526400000, 1586822400000],
                     val: 'Metropolitan area',
                   },
                 ],
@@ -1077,7 +1191,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584748800000, 1586649600000],
+                    timeRange: [1584748800000, 1587254400000],
                     val: 'National',
                   },
                 ],
@@ -1091,7 +1205,21 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585180800000, 1586390400000],
+                    timeRange: [1585180800000, 1586304000000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'San Marino',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584144000000, 1589328000000],
                     val: 'National',
                   },
                 ],
@@ -1105,7 +1233,7 @@
                 label: 'Jeddah',
                 data: [
                   {
-                    timeRange: [1585440000000, 1586822400000],
+                    timeRange: [1585440000000, 1590624000000],
                     val: 'City',
                   },
                 ],
@@ -1114,7 +1242,7 @@
                 label: 'Mecca',
                 data: [
                   {
-                    timeRange: [1585180800000, 1586822400000],
+                    timeRange: [1585180800000, 1590364800000],
                     val: 'City',
                   },
                 ],
@@ -1123,7 +1251,7 @@
                 label: 'Medina',
                 data: [
                   {
-                    timeRange: [1585180800000, 1586822400000],
+                    timeRange: [1585180800000, 1590364800000],
                     val: 'City',
                   },
                 ],
@@ -1132,7 +1260,7 @@
                 label: 'Qatif',
                 data: [
                   {
-                    timeRange: [1583712000000, 1586822400000],
+                    timeRange: [1583712000000, 1588896000000],
                     val: 'Area',
                   },
                 ],
@@ -1141,8 +1269,22 @@
                 label: 'Riyadh',
                 data: [
                   {
-                    timeRange: [1585180800000, 1586822400000],
+                    timeRange: [1585180800000, 1590364800000],
                     val: 'City',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Serbia',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584230400000, 1589414400000],
+                    val: 'National',
                   },
                 ],
               },
@@ -1169,7 +1311,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585180800000, 1586995200000],
+                    timeRange: [1585180800000, 1586908800000],
                     val: 'National',
                   },
                 ],
@@ -1183,7 +1325,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584144000000, 1587772800000],
+                    timeRange: [1584144000000, 1586563200000],
                     val: 'National',
                   },
                 ],
@@ -1211,7 +1353,21 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584835200000, 1586563200000],
+                    timeRange: [1584835200000, 1587254400000],
+                    val: 'National',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            group: 'Ukraine',
+            data: [
+              {
+                label: 'National',
+                data: [
+                  {
+                    timeRange: [1584403200000, 1587686400000],
                     val: 'National',
                   },
                 ],
@@ -1225,7 +1381,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585180800000, 1585526400000],
+                    timeRange: [1585180800000, 1587081600000],
                     val: 'National',
                   },
                 ],
@@ -1253,7 +1409,7 @@
                 label: 'California',
                 data: [
                   {
-                    timeRange: [1584576000000, 1585440000000],
+                    timeRange: [1584576000000, 1589760000000],
                     val: 'State',
                   },
                 ],
@@ -1262,7 +1418,7 @@
                 label: 'Clark County, NV',
                 data: [
                   {
-                    timeRange: [1584662400000, 1587340800000],
+                    timeRange: [1584662400000, 1589846400000],
                     val: 'County',
                   },
                 ],
@@ -1271,7 +1427,7 @@
                 label: 'Connecticut',
                 data: [
                   {
-                    timeRange: [1584921600000, 1585440000000],
+                    timeRange: [1584921600000, 1587513600000],
                     val: 'State',
                   },
                 ],
@@ -1289,7 +1445,7 @@
                 label: 'Kansas City, KS',
                 data: [
                   {
-                    timeRange: [1585008000000, 1587600000000],
+                    timeRange: [1585008000000, 1587254400000],
                     val: 'City',
                   },
                 ],
@@ -1307,7 +1463,7 @@
                 label: 'Michigan',
                 data: [
                   {
-                    timeRange: [1585008000000, 1586822400000],
+                    timeRange: [1585008000000, 1586736000000],
                     val: 'State',
                   },
                 ],
@@ -1316,7 +1472,7 @@
                 label: 'New York',
                 data: [
                   {
-                    timeRange: [1584662400000, 1585440000000],
+                    timeRange: [1584662400000, 1588118400000],
                     val: 'State',
                   },
                 ],
@@ -1325,7 +1481,7 @@
                 label: 'Oregon',
                 data: [
                   {
-                    timeRange: [1585008000000, 1586822400000],
+                    timeRange: [1585008000000, 1590192000000],
                     val: 'State',
                   },
                 ],
@@ -1334,7 +1490,7 @@
                 label: 'Wisconsin',
                 data: [
                   {
-                    timeRange: [1585008000000, 1587686400000],
+                    timeRange: [1585008000000, 1590192000000],
                     val: 'State',
                   },
                 ],
@@ -1348,7 +1504,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1584403200000, 1587254400000],
+                    timeRange: [1584403200000, 1589587200000],
                     val: 'National',
                   },
                 ],
@@ -1362,7 +1518,7 @@
                 label: 'National',
                 data: [
                   {
-                    timeRange: [1585526400000, 1586649600000],
+                    timeRange: [1585526400000, 1587254400000],
                     val: 'National',
                   },
                 ],
